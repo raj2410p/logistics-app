@@ -1,6 +1,7 @@
 {
   "name": "swiftly",
   "private": true,
+  "main":"app.tsx",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
