@@ -508,9 +508,9 @@ export const Admin = () => {
               </div>
             </div>
 
-            <div style={{ display: 'flex', gap: '20px', marginTop: '20px' }}>
+            <div style={{ display: 'flex', gap: '20px', marginTop: '20px' ,padding:'100px'}}>
 
-              <div className="row">
+              <div className="row " style={{marginRight:'200px'}}>
                 <div className="col-12 grid-margin">
                   <div className="card">
                     <div className="card-body">
@@ -622,8 +622,7 @@ export const Admin = () => {
 
               </div>
             </div>
-            <div
-  className="card"
+            <div className="card"
   style={{
     display: "flex",
     flexDirection: "column",
@@ -649,9 +648,10 @@ export const Admin = () => {
       style={{
         flex: "1 1 45%", // Adjusts size for both small and large screens
         padding: "10px",
-        minWidth: "300px", // Ensures proper width on small screens
+        minWidth: "", // Ensures proper width on small screens
         borderRadius: "8px",
         boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+        gap: "20px",
         backgroundColor: "#f9f9f9",
       }}
     >
@@ -670,7 +670,7 @@ export const Admin = () => {
         backgroundColor: "#f9f9f9",
       }}
     >
-      <h3 style={{ textAlign: "center" }}>Traffic Sources</h3>
+      <h3 >Traffic Sources</h3>
       <TrafficSourcesChart />
     </div>
   </div>
