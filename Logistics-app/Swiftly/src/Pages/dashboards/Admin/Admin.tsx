@@ -1,18 +1,10 @@
 import "./Admin.css";
 import SalesChart from "./SaleChart";
 import TrafficSourcesChart from "./TrafficSourcesChart";
+import TicketsGrid from "../../../assets/Components/Tickets";
 export const Admin = () => {
   return (
     <>
-      <link rel="shortcut icon" href="assets/images/favicon.png" />
-      <div className="d-flex align-items-center justify-content-between">
-        <a href="https://www.bootstrapdash.com/product/purple-bootstrap-admin-template/">
-          <i className="mdi mdi-home me-3 text-white" />
-        </a>
-        <button id="bannerClose" className="btn border-0 p-0">
-          <i className="mdi mdi-close text-white mr-0" />
-        </button>
-      </div>
       {/* partial:partials/_navbar.html */}
       <nav className="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div className="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
@@ -505,15 +497,12 @@ export const Admin = () => {
               </div>
             </div>
 
-            <div
-              style={{
-                display: "flex",
-                gap: "20px",
-                marginTop: "20px",
-                // padding: "100px",
-              }}
-            >
-              <div className="row ">
+              {/* recent tickets grid user */}
+              <div style={{ padding: "10px" }}>
+                <h2>Recent Tickets</h2>
+                <TicketsGrid />
+              </div>
+              {/* <div className="row ">
                 <div className="col-12 grid-margin">
                   <div className="card overflow-x-scroll">
                     <div className="card-body">
@@ -608,106 +597,94 @@ export const Admin = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="row">
-                <div className="col-lg-5 grid-margin stretch-card">
-                  <div className="card">
-                    <div className="card-body p-0 d-flex">
-                      <div
-                        id="inline-datepicker"
-                        className="datepicker datepicker-custom"
-                      />
-                    </div>
+              </div> */}
+              <div
+                className="card"
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  padding: "20px",
+                  borderRadius: "8px",
+                  boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+                  backgroundColor: "#fff",
+                }}
+              >
+                <h3>Visit and Sales Statistics</h3>
+                <div
+                  style={{
+                    display: "flex",
+                    flexWrap: "wrap", // Ensures wrapping for smaller screens
+                    justifyContent: "space-between",
+                    alignItems: "flex-start",
+                    gap: "20px", // Adds spacing between charts
+                  }}
+                >
+                  {/* Line Chart Component */}
+                  <div
+                    className="chart-container"
+                    style={{
+                      flex: "1 1 45%", // Adjusts size for both small and large screens
+                      padding: "10px",
+                      minWidth: "", // Ensures proper width on small screens
+                      borderRadius: "8px",
+                      boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+                      gap: "20px",
+                      backgroundColor: "#f9f9f9",
+                    }}
+                  >
+                    <SalesChart />
+                  </div>
+
+                  {/* Pie Chart Component */}
+                  <div
+                    className="chart-container"
+                    style={{
+                      flex: "1 1 45%", // Adjusts size for both small and large screens
+                      padding: "10px",
+                      minWidth: "300px", // Ensures proper width on small screens
+                      borderRadius: "8px",
+                      boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+                      backgroundColor: "#f9f9f9",
+                    }}
+                  >
+                    <h3>Traffic Sources</h3>
+                    <TrafficSourcesChart />
                   </div>
                 </div>
               </div>
-            </div>
-            <div
-              className="card"
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                padding: "20px",
-                borderRadius: "8px",
-                boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
-                backgroundColor: "#fff",
-              }}
-            >
-              <h3>Visit and Sales Statistics</h3>
-              <div
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap", // Ensures wrapping for smaller screens
-                  justifyContent: "space-between",
-                  alignItems: "flex-start",
-                  gap: "20px", // Adds spacing between charts
-                }}
-              >
-                {/* Line Chart Component */}
-                <div
-                  className="chart-container"
-                  style={{
-                    flex: "1 1 45%", // Adjusts size for both small and large screens
-                    padding: "10px",
-                    minWidth: "", // Ensures proper width on small screens
-                    borderRadius: "8px",
-                    boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
-                    gap: "20px",
-                    backgroundColor: "#f9f9f9",
-                  }}
-                >
-                  <SalesChart />
+
+              {/* content-wrapper ends */}
+              {/* partial:partials/_footer.html */}
+              {/* content-wrapper ends */}
+              {/* partial:partials/_footer.html */}
+              <footer className="footer">
+                <div className="d-sm-flex justify-content-center justify-content-sm-between">
+                  <span className="text-muted text-center text-sm-left d-block d-sm-inline-block">
+                    Copyright © 2024{" "}
+                    <a href="/" target="_blank">
+                      Swiftly
+                    </a>
+                    . All rights reserved.
+                  </span>
                 </div>
+              </footer>
+              {/* partial */}
 
-                {/* Pie Chart Component */}
-                <div
-                  className="chart-container"
-                  style={{
-                    flex: "1 1 45%", // Adjusts size for both small and large screens
-                    padding: "10px",
-                    minWidth: "300px", // Ensures proper width on small screens
-                    borderRadius: "8px",
-                    boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
-                    backgroundColor: "#f9f9f9",
-                  }}
-                >
-                  <h3>Traffic Sources</h3>
-                  <TrafficSourcesChart />
-                </div>
-              </div>
+              {/* main-panel ends */}
+              {/* page-body-wrapper ends */}
+              {/* container-scroller */}
+              {/* plugins:js */}
+              {/* endinject */}
+              {/* Plugin js for this page */}
+              {/* End plugin js for this page */}
+              {/* inject:js */}
+              {/* endinject */}
+              {/* Custom js for this page */}
+              {/* End custom js for this page */}
             </div>
-
-            {/* content-wrapper ends */}
-            {/* partial:partials/_footer.html */}
-            {/* content-wrapper ends */}
-            {/* partial:partials/_footer.html */}
-            <footer className="footer">
-              <div className="d-sm-flex justify-content-center justify-content-sm-between">
-                <span className="text-muted text-center text-sm-left d-block d-sm-inline-block">
-                  Copyright © 2024{" "}
-                  <a href="/" target="_blank">
-                    Swiftly
-                  </a>
-                  . All rights reserved.
-                </span>
-              </div>
-            </footer>
-            {/* partial */}
-
-            {/* main-panel ends */}
-            {/* page-body-wrapper ends */}
-            {/* container-scroller */}
-            {/* plugins:js */}
-            {/* endinject */}
-            {/* Plugin js for this page */}
-            {/* End plugin js for this page */}
-            {/* inject:js */}
-            {/* endinject */}
-            {/* Custom js for this page */}
-            {/* End custom js for this page */}
           </div>
         </div>
-      </div>
+      
     </>
   );
 };
