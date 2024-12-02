@@ -1,10 +1,11 @@
+import Navbar from '../../assets/Components/Navbar'
 import './Landing.css'
 
 export const Landing = () => {
   return (
     <>
       {/* Nav For Landing Page */}
-      <nav className="bg-blue-200 border-b-2 border-gray-400 p-2 flex justify-between items-center">
+      {/* <nav className="bg-blue-200 border-b-2 border-gray-400 p-2 flex justify-between items-center">
         <div className="flex justify-between items-center gap-1">
           <img src="./src/assets/favicon.png" alt="" />
           <h1 className="text-xl font-mono">Swiftly</h1>
@@ -19,8 +20,8 @@ export const Landing = () => {
           <a type="button" className="text-lg border rounded-md border-slate-500 bg-cyan-400 hover:bg-lime-200 py-1 px-2" href="./login">Login</a>
           <a type="button" className="text-lg border rounded-md border-slate-500 bg-cyan-400 hover:bg-lime-200 py-1 px-2" href="./Signup">Sign Up</a>
         </div>
-      </nav>
-
+      </nav> */}
+      <Navbar/>
       {/* Head Body Section */}
 
     </>

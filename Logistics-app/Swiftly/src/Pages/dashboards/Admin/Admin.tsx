@@ -1,11 +1,9 @@
-
 import "./Admin.css";
-import SalesChart from "./salechart";
+import SalesChart from "./SaleChart";
 import TrafficSourcesChart from "./TrafficSourcesChart";
 export const Admin = () => {
   return (
     <>
-
       <link rel="shortcut icon" href="assets/images/favicon.png" />
       <div className="d-flex align-items-center justify-content-between">
         <a href="https://www.bootstrapdash.com/product/purple-bootstrap-admin-template/">
@@ -66,7 +64,8 @@ export const Admin = () => {
                 aria-labelledby="profileDropdown"
               >
                 <a className="dropdown-item" href="#">
-                  <i className="mdi mdi-cached me-2 text-success" /> Activity Log{" "}
+                  <i className="mdi mdi-cached me-2 text-success" /> Activity
+                  Log{" "}
                 </a>
                 <div className="dropdown-divider" />
                 <a className="dropdown-item" href="#">
@@ -190,7 +189,10 @@ export const Admin = () => {
                     <h6 className="preview-subject font-weight-normal mb-1">
                       Settings
                     </h6>
-                    <p className="text-gray ellipsis mb-0"> Update dashboard </p>
+                    <p className="text-gray ellipsis mb-0">
+                      {" "}
+                      Update dashboard{" "}
+                    </p>
                   </div>
                 </a>
                 <div className="dropdown-divider" />
@@ -245,7 +247,9 @@ export const Admin = () => {
                 </div>
                 <div className="nav-profile-text d-flex flex-column">
                   <span className="font-weight-bold mb-2">admin</span>
-                  <span className="text-secondary text-small">Project Manager</span>
+                  <span className="text-secondary text-small">
+                    Project Manager
+                  </span>
                 </div>
                 <i className="mdi mdi-bookmark-check text-success nav-profile-badge" />
               </a>
@@ -281,10 +285,7 @@ export const Admin = () => {
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a
-                      className="nav-link"
-                      href="#"
-                    >
+                    <a className="nav-link" href="#">
                       Typography
                     </a>
                   </li>
@@ -423,11 +424,7 @@ export const Admin = () => {
               </div>
             </li>
             <li className="nav-item">
-              <a
-                className="nav-link"
-                href="#"
-                target="_blank"
-              >
+              <a className="nav-link" href="#" target="_blank">
                 <span className="menu-title">Documentation</span>
                 <i className="mdi mdi-file-document-box menu-icon" />
               </a>
@@ -508,11 +505,17 @@ export const Admin = () => {
               </div>
             </div>
 
-            <div style={{ display: 'flex', gap: '20px', marginTop: '20px' ,padding:'100px'}}>
-
-              <div className="row " style={{marginRight:'200px'}}>
+            <div
+              style={{
+                display: "flex",
+                gap: "20px",
+                marginTop: "20px",
+                // padding: "100px",
+              }}
+            >
+              <div className="row ">
                 <div className="col-12 grid-margin">
-                  <div className="card">
+                  <div className="card overflow-x-scroll">
                     <div className="card-body">
                       <h4 className="card-title">Recent Tickets</h4>
                       <div className="table-responsive">
@@ -617,66 +620,62 @@ export const Admin = () => {
                     </div>
                   </div>
                 </div>
-
-
-
               </div>
             </div>
-            <div className="card"
-  style={{
-    display: "flex",
-    flexDirection: "column",
-    padding: "20px",
-    borderRadius: "8px",
-    boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
-    backgroundColor: "#fff",
-  }}
->
-  <h3>Visit and Sales Statistics</h3>
-  <div
-    style={{
-      display: "flex",
-      flexWrap: "wrap", // Ensures wrapping for smaller screens
-      justifyContent: "space-between",
-      alignItems: "flex-start",
-      gap: "20px", // Adds spacing between charts
-    }}
-  >
-    {/* Line Chart Component */}
-    <div
-      className="chart-container"
-      style={{
-        flex: "1 1 45%", // Adjusts size for both small and large screens
-        padding: "10px",
-        minWidth: "", // Ensures proper width on small screens
-        borderRadius: "8px",
-        boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
-        gap: "20px",
-        backgroundColor: "#f9f9f9",
-      }}
-    >
-      <SalesChart />
-    </div>
+            <div
+              className="card"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                padding: "20px",
+                borderRadius: "8px",
+                boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+                backgroundColor: "#fff",
+              }}
+            >
+              <h3>Visit and Sales Statistics</h3>
+              <div
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap", // Ensures wrapping for smaller screens
+                  justifyContent: "space-between",
+                  alignItems: "flex-start",
+                  gap: "20px", // Adds spacing between charts
+                }}
+              >
+                {/* Line Chart Component */}
+                <div
+                  className="chart-container"
+                  style={{
+                    flex: "1 1 45%", // Adjusts size for both small and large screens
+                    padding: "10px",
+                    minWidth: "", // Ensures proper width on small screens
+                    borderRadius: "8px",
+                    boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+                    gap: "20px",
+                    backgroundColor: "#f9f9f9",
+                  }}
+                >
+                  <SalesChart />
+                </div>
 
-    {/* Pie Chart Component */}
-    <div
-      className="chart-container"
-      style={{
-        flex: "1 1 45%", // Adjusts size for both small and large screens
-        padding: "10px",
-        minWidth: "300px", // Ensures proper width on small screens
-        borderRadius: "8px",
-        boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
-        backgroundColor: "#f9f9f9",
-      }}
-    >
-      <h3 >Traffic Sources</h3>
-      <TrafficSourcesChart />
-    </div>
-  </div>
-</div>
-
-
+                {/* Pie Chart Component */}
+                <div
+                  className="chart-container"
+                  style={{
+                    flex: "1 1 45%", // Adjusts size for both small and large screens
+                    padding: "10px",
+                    minWidth: "300px", // Ensures proper width on small screens
+                    borderRadius: "8px",
+                    boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+                    backgroundColor: "#f9f9f9",
+                  }}
+                >
+                  <h3>Traffic Sources</h3>
+                  <TrafficSourcesChart />
+                </div>
+              </div>
+            </div>
 
             {/* content-wrapper ends */}
             {/* partial:partials/_footer.html */}
@@ -691,7 +690,6 @@ export const Admin = () => {
                   </a>
                   . All rights reserved.
                 </span>
-
               </div>
             </footer>
             {/* partial */}
