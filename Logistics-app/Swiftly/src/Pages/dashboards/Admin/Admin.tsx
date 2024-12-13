@@ -54,7 +54,7 @@ const Admin = () => {
                       Weekly Sales{" "}
                       <i className="mdi mdi-chart-line mdi-24px float-end" />
                     </h4>
-                    <h2 className="mb-5">$ 15,0000</h2>
+                    <h2 className="mb-5">€ 15,0000</h2>
                     <h6 className="card-text">Increased by 60%</h6>
                   </div>
                 </div>
