@@ -1,28 +1,28 @@
-import Navbar from '../../assets/Components/Navbar'
 import './Landing.css'
 
 export const Landing = () => {
   return (
     <>
-      {/* Nav For Landing Page */}
-      {/* <nav className="bg-blue-200 border-b-2 border-gray-400 p-2 flex justify-between items-center">
-        <div className="flex justify-between items-center gap-1">
-          <img src="./src/assets/favicon.png" alt="" />
-          <h1 className="text-xl font-mono">Swiftly</h1>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6">
+            <h1 className="title">Welcome to Swiftly</h1>
+            <p className="description">
+              Swiftly is a logistics management platform that helps you manage
+              your business operations efficiently. It provides you with
+              real-time data and analytics to help you make informed decisions.
+            </p>
+            <button className="btn btn-primary">Get Started</button>
+          </div>
+          <div className="col-md-6">
+            <img
+              src="https://images.unsplash.com/photo-1602529610325-0b3d5e0b1c4e"
+              alt="Delivery Truck"
+              className="img-fluid"
+            />
+          </div>
         </div>
-        <ul className="flex justify-around items-center gap-10">
-          <li><a href="/" className="text-xl hover:bg-cyan-300 py-2 px-3 hover:outline hover:outline-gray-400 rounded-md " >Home</a></li>
-          <li><a href="#" className="text-xl hover:bg-cyan-300 py-2 px-3 hover:outline hover:outline-gray-400 rounded-md " >Services</a></li>
-          <li><a href="#" className="text-xl hover:bg-cyan-300 py-2 px-3 hover:outline hover:outline-gray-400 rounded-md " >About</a></li>
-          <li><a href="#" className="text-xl hover:bg-cyan-300 py-2 px-3 hover:outline hover:outline-gray-400 rounded-md " >Contact</a></li>
-        </ul>
-        <div className="flex items-center gap-1">
-          <a type="button" className="text-lg border rounded-md border-slate-500 bg-cyan-400 hover:bg-lime-200 py-1 px-2" href="./login">Login</a>
-          <a type="button" className="text-lg border rounded-md border-slate-500 bg-cyan-400 hover:bg-lime-200 py-1 px-2" href="./Signup">Sign Up</a>
-        </div>
-      </nav> */}
-      <Navbar/>
-      {/* Head Body Section */}
+      </div>
 
     </>
   )

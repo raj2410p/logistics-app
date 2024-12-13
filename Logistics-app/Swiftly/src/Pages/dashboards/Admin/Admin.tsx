@@ -2,27 +2,27 @@ import "./Admin.css";
 import SalesChart from "./SaleChart";
 import TrafficSourcesChart from "./TrafficSourcesChart";
 import TicketsGrid from "../../../assets/Components/Tickets";
-import Sidebar from "../../../assets/Components/sidebar";
+import Sidebar from "../../../assets/Components/Sidebar";
 import Navbar from "../../../assets/Components/Navbar";
-export const Admin = () => {
+import { useState } from "react";
+
+const Admin = () => {
+  const [isSidebarOpen, setSidebarOpen] = useState(false); // Shared state
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen); // Toggle sidebar visibility
+  };
+
   return (
-    <>
-      {/* navbar starts here */}
-      <div className="div">
-        <Navbar />
-      </div>
-      {/* navbar ends here */}
-      <div className="container-fluid page-body-wrapper">
-       {/* sidebar starts here */}
-       <div className="div">
-        <Sidebar />
-       </div>
+    <div className="w-screen min-h-screen overflow-hidden">
+      {/* Pass toggleSidebar function and state to Navbar */}
+      <Navbar toggleSidebar={toggleSidebar} />
+      <div className="flex h-full">
+        {/* Sidebar */}
+        <Sidebar isOpen={isSidebarOpen} />
 
-        {/* sidebar end here */}
-
-
-        {/* cards starts here */}
-        <div className="main-panel">
+        {/* Main Content */}
+        <div className="flex-1 overflow-y-scroll h-full">
           <div className="content-wrapper">
             <div className="page-header">
               <h3 className="page-title">
@@ -96,83 +96,67 @@ export const Admin = () => {
             </div>
             {/* cards ends here */}
 
-              {/* recent tickets grid user */}
-              <div style={{ padding: "10px" }}>
-                <h2>Recent Tickets</h2>
-                <TicketsGrid />
-              </div>
+            {/* recent tickets grid user */}
+            <div className="overflow-auto mb-4">
+              <h2>Recent Tickets</h2>
+              <TicketsGrid />
+            </div>
+
+            <div
+              className="flex flex-col md:flex-row gap-6"
+            >
+              {/* Line Chart Component */}
               <div
-                className="card"
+                className="chart-container"
                 style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  padding: "20px",
+                  flex: "1 1 45%", // Adjusts size for both small and large screens
+                  padding: "10px",
+                  minWidth: "", // Ensures proper width on small screens
                   borderRadius: "8px",
                   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
-                  backgroundColor: "#fff",
+                  gap: "20px",
+                  backgroundColor: "#f9f9f9",
+                  overflow: "auto"
                 }}
               >
-                <h3>Visit and Sales Statistics</h3>
-                <div
-                  style={{
-                    display: "flex",
-                    flexWrap: "wrap", // Ensures wrapping for smaller screens
-                    justifyContent: "space-between",
-                    alignItems: "flex-start",
-                    gap: "20px", // Adds spacing between charts
-                  }}
-                >
-                  {/* Line Chart Component */}
-                  <div
-                    className="chart-container"
-                    style={{
-                      flex: "1 1 45%", // Adjusts size for both small and large screens
-                      padding: "10px",
-                      minWidth: "", // Ensures proper width on small screens
-                      borderRadius: "8px",
-                      boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
-                      gap: "20px",
-                      backgroundColor: "#f9f9f9",
-                    }}
-                  >
-                    <SalesChart />
-                  </div>
-
-                  {/* Pie Chart Component */}
-                  <div
-                    className="chart-container"
-                    style={{
-                      flex: "1 1 45%", // Adjusts size for both small and large screens
-                      padding: "10px",
-                      minWidth: "300px", // Ensures proper width on small screens
-                      borderRadius: "8px",
-                      boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
-                      backgroundColor: "#f9f9f9",
-                    }}
-                  >
-                    <h3>Traffic Sources</h3>
-                    <TrafficSourcesChart />
-                  </div>
-                </div>
+                <h3 className="py-2">Visit and Sales Statistics</h3>
+                <SalesChart />
               </div>
-              {/* footer starts here */}
-              <footer className="footer">
-                <div className="d-sm-flex justify-content-center justify-content-sm-between">
-                  <span className="text-muted text-center text-sm-left d-block d-sm-inline-block">
-                    Copyright © 2024{" "}
-                    <a href="/" target="_blank">
-                      Swiftly
-                    </a>
-                    . All rights reserved.
-                  </span>
-                </div>
-              </footer>
-           {/* footer ends here */}
+              {/* Pie Chart Component */}
+              <div
+                className="chart-container"
+                style={{
+                  // flex: "1 1 50%", // Adjusts size for both small and large screens
+                  padding: "10px",
+                  minWidth: "", // Ensures proper width on small screens
+                  borderRadius: "8px",
+                  boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+                  backgroundColor: "#f9f9f9",
+                  overflow: "auto"
+                }}
+              >
+                <h3 className="py-2">Traffic Sources</h3>
+                <TrafficSourcesChart />
+              </div>
             </div>
+            {/* footer starts here */}
+            <footer className="footer mb-2">
+              <div className="d-sm-flex justify-content-center justify-content-sm-between">
+                <span className="text-muted text-center text-sm-left d-block d-sm-inline-block">
+                  Copyright © 2024{" "}
+                  <a href="/" target="_blank">
+                    Swiftly
+                  </a>
+                  . All rights reserved.
+                </span>
+              </div>
+            </footer>
           </div>
+
         </div>
-      
-    </>
+      </div>
+    </div>
   );
 };
+
 export default Admin;

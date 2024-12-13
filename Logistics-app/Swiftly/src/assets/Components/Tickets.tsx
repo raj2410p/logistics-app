@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AgGridReact, AgGridReactProps } from "ag-grid-react";
+import { AgGridReact } from "ag-grid-react";
 import { ColDef } from "ag-grid-community";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
@@ -62,13 +62,11 @@ import "ag-grid-community/styles/ag-theme-alpine.css";
 
   return (
     <div
-      className="ag-theme-alpine"
+      className="ag-theme-alpine md:w-full w-screen"
       style={{
-        height: "400px",
-        width: "100%",
+        // width: "100vh",
         borderRadius: "8px",
-        overflow: "hidden",
-        boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+        boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)"
       }}
     >
       <AgGridReact

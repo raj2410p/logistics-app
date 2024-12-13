@@ -1,85 +1,41 @@
-const Sidebar = () => {
-    return (
-      <div className="h-screen w-64 bg-white text-gray-800 flex flex-col">
-        {/* Logo */}
-  
-        {/* Navigation Menu */}
-        <div className="flex-grow">
-          <ul className="mt-6">
-            {/* Menu Items */}
-            <li className="hover:bg-indigo-400">
-              <a href="#" className="flex items-center px-4 py-3 space-x-3 text-gray-800">
-                <span className="text-xl">🏠</span>
-                <span>Dashboard</span>
-              </a>
-            </li>
-            <li className="hover:bg-indigo-400">
-              <a href="#" className="flex items-center px-4 py-3 space-x-3 text-gray-800">
-                <span className="text-xl">👥</span>
-                <span>Team</span>
-              </a>
-            </li>
-            <li className="hover:bg-indigo-400">
-              <a href="#" className="flex items-center px-4 py-3 space-x-3 text-gray-800">
-                <span className="text-xl">📁</span>
-                <span>Projects</span>
-              </a>
-            </li>
-            <li className="hover:bg-indigo-400">
-              <a href="#" className="flex items-center px-4 py-3 space-x-3 text-gray-800">
-                <span className="text-xl">📅</span>
-                <span>Calendar</span>
-              </a>
-            </li>
-            <li className="hover:bg-indigo-400">
-              <a href="#" className="flex items-center px-4 py-3 space-x-3 text-gray-800">
-                <span className="text-xl">📄</span>
-                <span>Documents</span>
-              </a>
-            </li>
-            <li className="hover:bg-indigo-400">
-              <a href="#" className="flex items-center px-4 py-3 space-x-3 text-gray-800">
-                <span className="text-xl">📊</span>
-                <span>Reports</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-  
-        {/* Your Teams */}
-        <div className="mt-6 px-4">
-          <h3 className="text-sm font-semibold text-indigo-200 uppercase">
-            Your Teams
-          </h3>
-          <ul className="mt-3 space-y-2">
-            <li className="flex items-center space-x-3">
-              <span className="h-8 w-8 rounded-full bg-indigo-300 text-center leading-8 font-bold">H</span>
-              <span>Heroicons</span>
-            </li>
-            <li className="flex items-center space-x-3">
-              <span className="h-8 w-8 rounded-full bg-indigo-300 text-center leading-8 font-bold">T</span>
-              <span>Tailwind Labs</span>
-            </li>
-            <li className="flex items-center space-x-3">
-              <span className="h-8 w-8 rounded-full bg-indigo-300 text-center leading-8 font-bold">W</span>
-              <span>Workcation</span>
-            </li>
-          </ul>
-        </div>
-  
-        {/* Footer Settings */}
-        <div className="mt-auto">
-          <a
-            href="#"
-            className="flex items-center px-4 py-3 space-x-3 hover:bg-indigo-100"
-          >
-            <span className="text-xl">⚙️</span>
-            <span>Settings</span>
-          </a>
-        </div>
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHouse, faDatabase, faWallet, faGears } from '@fortawesome/free-solid-svg-icons';
+const Sidebar = ({ isOpen }: { isOpen: boolean }) => {
+  return (
+    <div className={`flex flex-col min-h-screen bg-slate-200 dark:text-white ${isOpen ? 'w-64' : 'w-20'} transition-width duration-300`}>
+
+      {/* Navigation Menu */}
+      <div className="flex-grow">
+        <ul className="mt-6 p-0">
+          <li className="hover:bg-indigo-400">
+            <a href="#" className="flex items-center px-4 py-3 space-x-3">
+              <FontAwesomeIcon icon={faHouse} size='xl' />
+              {isOpen && <span>Dashboard</span>}
+            </a>
+          </li>
+          <li className="hover:bg-indigo-400">
+            <a href="#" className="flex items-center px-4 py-3 space-x-3">
+              <FontAwesomeIcon icon={faDatabase} size='xl' />
+              {isOpen && <span>History</span>}
+            </a>
+          </li>
+          <li className="hover:bg-indigo-400">
+            <a href="#" className="flex items-center px-4 py-3 space-x-3">
+              <FontAwesomeIcon icon={faWallet} size='xl' />
+              {isOpen && <span>Wallet</span>}
+            </a>
+          </li>
+          <li className="hover:bg-indigo-400">
+            <a href="#" className="flex items-center px-4 py-3 space-x-3">
+              <FontAwesomeIcon icon={faGears} size='xl' />
+              {isOpen && <span>Settings</span>}
+            </a>
+          </li>
+        </ul>
       </div>
-    );
-  };
-  
-  export default Sidebar;
-  
+
+    </div>
+  );
+};
+
+export default Sidebar;
