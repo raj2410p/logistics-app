@@ -1,30 +1,146 @@
-import Navbar from '../../assets/Components/Navbar'
 import './Landing.css'
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import CustomerRating from "./customerReviews";
+import BrandPartners from "./BrandPartner";
 
-export const Landing = () => {
+
+const LandingPage = () => {
   return (
-    <>
-      {/* Nav For Landing Page */}
-      {/* <nav className="bg-blue-200 border-b-2 border-gray-400 p-2 flex justify-between items-center">
-        <div className="flex justify-between items-center gap-1">
-          <img src="./src/assets/favicon.png" alt="" />
-          <h1 className="text-xl font-mono">Swiftly</h1>
-        </div>
-        <ul className="flex justify-around items-center gap-10">
-          <li><a href="/" className="text-xl hover:bg-cyan-300 py-2 px-3 hover:outline hover:outline-gray-400 rounded-md " >Home</a></li>
-          <li><a href="#" className="text-xl hover:bg-cyan-300 py-2 px-3 hover:outline hover:outline-gray-400 rounded-md " >Services</a></li>
-          <li><a href="#" className="text-xl hover:bg-cyan-300 py-2 px-3 hover:outline hover:outline-gray-400 rounded-md " >About</a></li>
-          <li><a href="#" className="text-xl hover:bg-cyan-300 py-2 px-3 hover:outline hover:outline-gray-400 rounded-md " >Contact</a></li>
+    <div className="min-h-screen bg-gray-900 text-white">
+      {/* Navbar */}
+      <nav className="flex justify-between items-center p-6 bg-gray-800">
+      <img src='./src/assets/logo.png' alt="Swiftly Logo" className="w-24" />
+        <ul className="flex space-x-6">
+          <li><a href="#home" className="text-indigo-400">Home</a></li>
+          <li><a href="#about" className="text-indigo-400">About Us</a></li>
+          <li><a href="#fulfillment" className="text-indigo-400">Fulfillment</a></li>
+          <li><a href="#software" className="text-indigo-400">Software</a></li>
+          <li><a href="#storage" className="text-indigo-400">Storage</a></li>
+          <li><a href="#news" className="text-indigo-400">News</a></li>
         </ul>
-        <div className="flex items-center gap-1">
-          <a type="button" className="text-lg border rounded-md border-slate-500 bg-cyan-400 hover:bg-lime-200 py-1 px-2" href="./login">Login</a>
-          <a type="button" className="text-lg border rounded-md border-slate-500 bg-cyan-400 hover:bg-lime-200 py-1 px-2" href="./Signup">Sign Up</a>
-        </div>
-      </nav> */}
-      <Navbar/>
-      {/* Head Body Section */}
+        <button className="bg-indigo-500 px-4 py-2 rounded hover:bg-indigo-600">
+         <a href='/Contact'className='text-gray-200'> Contact Us</a>
+          </button>
+      </nav>
 
-    </>
-  )
-}
-export default Landing
+      {/* Hero Section */}
+      <header className="flex flex-col items-center text-center py-16">
+        <h1 className="text-4xl font-bold text-indigo-400 uppercase mb-4">Safe, Fast & Reliable</h1>
+        <h2 className="text-3xl font-bold mb-6">Trusted Global Logistics Services</h2>
+        <p className="max-w-2xl text-gray-400 mb-8">
+          Focused on B2C Delivery specifically for E-commerce. Free Multi-Channel Carrier Software, Strategic Partnerships, and Carrier Relationships.
+        </p>
+        <div className="space-x-4">
+          <button className="bg-indigo-500 px-6 py-2 rounded hover:bg-indigo-600" >
+            <a href='/Customer' className='text-gray-200'>Explore Now</a>
+            </button>
+          <button className="border border-indigo-500 px-6 py-2 rounded hover:bg-indigo-500 hover:text-white">
+            <a href='/about' className='text-gray-200'>About</a>
+            </button>
+        </div>
+      </header>
+
+      {/* Statistics Section */}
+      <section className="bg-gray-900 text-white py-8">
+  <div className="container mx-auto px-4">
+    <h2 className="text-center text-2xl font-semibold mb-8">
+      The Numbers Speak for Themselves
+    </h2>
+    <div className="flex justify-center items-center space-x-8 text-center">
+      {/* First Statistic */}
+      <div>
+        <p className="text-4xl font-bold">24,000</p>
+        <p className="text-gray-400">Average Labels a Day</p>
+      </div>
+    
+      <div className="border-l-2 border-gray-700 h-12"></div>
+      {/* Second Statistic */}
+      <div>
+        <p className="text-4xl font-bold">150+</p>
+        <p className="text-gray-400">Happy Customers</p>
+      </div>
+     
+      <div className="border-l-2 border-gray-700 h-12"></div>
+      {/* Third Statistic */}
+      <div>
+        <p className="text-4xl font-bold">5</p>
+        <p className="text-gray-400">Locations & Expanding</p>
+      </div>
+
+      
+
+    </div>
+  </div>
+</section>
+
+
+        
+        {/* Customer Reviews */}
+        <div className="div">
+          <CustomerRating />
+          </div>
+      {/* Illustration Section */}
+      <section className="py-12 px-6">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center">
+          <div className="md:w-1/2 text-center md:text-left mb-6 md:mb-0">
+            <h2 className="text-3xl font-bold mb-4">Why Choose Us?</h2>
+            <p className="text-gray-400 mb-4">
+              With a focus on excellence, we provide top-tier logistics solutions tailored to your business needs.
+            </p>
+            <button className="bg-indigo-500 px-6 py-2 rounded hover:bg-indigo-600">Learn More</button>
+          </div>
+          <div className="md:w-1/2">
+            <img
+              src="./src/assets/logisticsIlutration.png"
+              alt="Logistics Illustration"
+              className="w-full"
+            />
+          </div>
+        </div>
+      </section>
+
+          {/*Brand parnter  */}
+          <div className="div">
+            <BrandPartners />
+          </div>
+        
+
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white py-6">
+  <div className="container mx-auto px-4">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <h3 className="text-lg font-semibold mb-4 ">Locations</h3>
+        <ul>
+          <li><a href="#" className="text-gray-500">New York, USA</a></li>
+          <li><a href="#" className="text-gray-500">Berlin,Germany</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+        <p><a href="tel:+1234567890" className="text-gray-500">+1 234 567 890</a></p>
+        <p><a href="mailto:support@swiftlylogistics.com" className="text-gray-500 ">support@swiftlylogistics.com</a></p>
+        <p>Office Hours: Mon-Fri, 9 AM - 6 PM</p>
+      </div>
+      <div>
+        <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
+        <ul className="flex space-x-4">
+          <li><a href="#" className="text-gray-500"><i className="fab fa-facebook-f"></i></a></li>
+          <li><a href="#" className="text-gray-500"><i className="fab fa-twitter"></i></a></li>
+          <li><a href="#" className="text-gray-500"><i className="fab fa-linkedin-in"></i></a></li>
+          <li><a href="#" className="text-gray-500"><i className="fab fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div className="mt-8 border-t border-gray-700 pt-4">
+      <p className="text-sm text-center">&copy; 2024 Swiftly Logistics. All rights reserved.</p>
+      <p className="text-sm text-center"><a href="#" className="hover:text-gray-200">Privacy Policy</a> | <a href="#" className="hover:text-gray-200">Terms of Service</a></p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+  );
+};
+
+export default LandingPage;
