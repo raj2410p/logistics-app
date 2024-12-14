@@ -1,6 +1,6 @@
 import './Landing.css'
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import CustomerRating from "./customerReviews";
+import CustomerRating from "./CustomerReviews";
 import BrandPartners from "./BrandPartner";
 
 
@@ -38,6 +38,14 @@ const LandingPage = () => {
             <a href='/about' className='text-gray-200'>About</a>
             </button>
         </div>
+        <div className="md:w-1/2">
+            <img
+              src="./src/assets/logistics.jpg"
+              alt="Logistics Illustration"
+              className="w-full"
+            />
+          </div>
+
       </header>
 
       {/* Statistics Section */}
