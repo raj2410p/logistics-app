@@ -45,7 +45,7 @@ const CustomerRating: React.FC = () => {
         <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
           What Our Customers Say !!
         </h2>
-        <div className="space-y-6">
+        <div className="space-y-6 grid grid-cols-1 md:grid-cols-3 md:gap-6 gap-2">
           {reviews.map((review, index) => (
             <div
               key={index}
