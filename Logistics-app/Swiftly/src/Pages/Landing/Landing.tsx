@@ -60,7 +60,7 @@ const LandingPage = () => {
         </div>
         <div className="header-img">
           <img
-            src="./src/assets/logistics.jpg"
+            src="./src/assets/logistics3.png"
             alt="Logistics Illustration"
             className="w-full"
           />
@@ -77,22 +77,22 @@ const LandingPage = () => {
           <div className="flex justify-center items-center space-x-8 text-center">
             {/* First Statistic */}
             <div>
-              <p className="text-4xl font-bold">24,000</p>
-              <p className="text-gray-400">Average Labels a Day</p>
+              <p className="text-xl sm:text-4xl font-bold">24,000</p>
+              <p className="text-gray-400 text-xs sm:text-base">Average Labels a Day</p>
             </div>
 
             <div className="border-l-2 border-gray-700 h-12"></div>
             {/* Second Statistic */}
             <div>
-              <p className="text-4xl font-bold">150+</p>
-              <p className="text-gray-400">Happy Customers</p>
+              <p className="text-xl sm:text-4xl font-bold">150+</p>
+              <p className="text-gray-400 text-xs sm:text-base">Happy Customers</p>
             </div>
 
             <div className="border-l-2 border-gray-700 h-12"></div>
             {/* Third Statistic */}
             <div>
-              <p className="text-4xl font-bold">5</p>
-              <p className="text-gray-400">Locations & Expanding</p>
+              <p className="text-xl sm:text-4xl font-bold">5</p>
+              <p className="text-gray-400 text-xs sm:text-base">Locations & Expanding</p>
             </div>
 
 
@@ -119,7 +119,7 @@ const LandingPage = () => {
           </div>
           <div className="md:w-1/2">
             <img
-              src="./src/assets/logisticsIlutration.png"
+              src="./src/assets/whyChooseUspng.png"
               alt="Logistics Illustration"
               className="w-full"
             />
@@ -136,7 +136,7 @@ const LandingPage = () => {
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-6">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 text-center md:grid-cols-3 gap-8">
             <div>
               <h3 className="text-lg font-semibold mb-4 ">Locations</h3>
               <ul>
@@ -152,7 +152,7 @@ const LandingPage = () => {
             </div>
             <div>
               <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
-              <ul className="flex space-x-4">
+              <ul className="flex justify-center space-x-4">
                 <li><a href="#" className="text-gray-500"><i className="fab fa-facebook-f"></i></a></li>
                 <li><a href="#" className="text-gray-500"><i className="fab fa-twitter"></i></a></li>
                 <li><a href="#" className="text-gray-500"><i className="fab fa-linkedin-in"></i></a></li>
