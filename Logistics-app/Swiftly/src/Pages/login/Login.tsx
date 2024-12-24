@@ -49,7 +49,7 @@ export const Login = () => {
           Login with Google
         </button>
         <div className="text-center">
-          <p>Don't have an account? <a href="#" className="text-blue-500 hover:underline">Sign Up</a> here!</p>
+          <p>Don't have an account? <a href="/signup" className="text-blue-500 hover:underline">Sign Up</a> here!</p>
         </div>
       </form>
     </div>
