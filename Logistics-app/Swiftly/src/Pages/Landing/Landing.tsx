@@ -13,16 +13,20 @@ const LandingPage = () => {
       <nav className="flex justify-between items-center p-6 bg-gray-800">
         <img src='./src/assets/logo.png' alt="Swiftly Logo" className="w-24" />
         <ul className="hidden mb-0 md:flex space-x-6 text-base">
-          <li><a href="#home" className="px-2 py-2 text-indigo-400 hover:text-indigo-600 no-underline">Home</a></li>
-          <li><a href="#about" className="px-2 py-2 text-indigo-400 hover:text-indigo-600 no-underline">About Us</a></li>
-          <li><a href="#fulfillment" className="px-2 py-2 text-indigo-400 hover:text-indigo-600 no-underline">Fulfillment</a></li>
-          <li><a href="#software" className="px-2 py-2 text-indigo-400 hover:text-indigo-600 no-underline">Software</a></li>
-          <li><a href="#storage" className="px-2 py-2 text-indigo-400 hover:text-indigo-600 no-underline">Storage</a></li>
-          <li><a href="#news" className="px-2 py-2 text-indigo-400 hover:text-indigo-600 no-underline">News</a></li>
+          <li><a href="/" className="px-2 py-2 text-indigo-400 hover:bg-gray-900 hover:text-indigo-600 no-underline">Home</a></li>
+          <li><a href="#about" className="px-2 py-2 text-indigo-400 hover:bg-gray-900 hover:text-indigo-600 no-underline">About Us</a></li>
+          <li><a href="#service" className="px-2 py-2 text-indigo-400 hover:bg-gray-900 hover:text-indigo-600 no-underline">Service's</a></li>
+          <li><a href="#contact" className="px-2 py-2 text-indigo-400 hover:bg-gray-900 hover:text-indigo-600 no-underline">Contact</a></li>
+          <li><a href="#news" className="px-2 py-2 text-indigo-400 hover:bg-gray-900 hover:text-indigo-600 no-underline">News</a></li>
         </ul>
-        <button className="hidden md:block bg-indigo-500 px-4 py-2 rounded hover:bg-indigo-600">
-          <a href='/Contact' className='text-gray-200 no-underline'> Contact Us</a>
-        </button>
+        <div className='flex space-x-4'>
+          <button className="hidden md:block bg-indigo-500 px-4 py-2 rounded hover:bg-indigo-600">
+            <a href='/login' className='text-gray-200 no-underline'>Login</a>
+          </button>
+          <button className="hidden md:block bg-indigo-500 px-4 py-2 rounded hover:bg-indigo-600">
+            <a href='/signup' className='text-gray-200 no-underline'>Signup</a>
+          </button>
+        </div>
         <div className="md:hidden">
           <button className="text-indigo-400 focus:outline-none" onClick={() => setOpen(!open)}>
             <i className="fas fa-bars p-2"></i>
@@ -32,13 +36,23 @@ const LandingPage = () => {
       {open && (
         <div className="md:hidden bg-gray-800 p-6">
           <ul className="space-y-4">
-            <li className='p-1 rounded hover:bg-gray-700 hover:outline hover:outline-1 hover:outline-slate-50'><a href="#home" className="text-indigo-400 hover:text-indigo-600 no-underline">Home</a></li>
-            <li className='p-1 rounded hover:bg-gray-700 hover:outline hover:outline-1 hover:outline-slate-50'><a href="#about" className="text-indigo-400 hover:text-indigo-600 no-underline">About Us</a></li>
-            <li className='p-1 rounded hover:bg-gray-700 hover:outline hover:outline-1 hover:outline-slate-50'><a href="#fulfillment" className="text-indigo-400 hover:text-indigo-600 no-underline">Fulfillment</a></li>
-            <li className='p-1 rounded hover:bg-gray-700 hover:outline hover:outline-1 hover:outline-slate-50'><a href="#software" className="text-indigo-400 hover:text-indigo-600 no-underline">Software</a></li>
-            <li className='p-1 rounded hover:bg-gray-700 hover:outline hover:outline-1 hover:outline-slate-50'><a href="#storage" className="text-indigo-400 hover:text-indigo-600 no-underline">Storage</a></li>
-            <li className='p-1 rounded hover:bg-gray-700 hover:outline hover:outline-1 hover:outline-slate-50'><a href="#news" className="text-indigo-400 hover:text-indigo-600 no-underline">News</a></li>
-            <li className='p-1 rounded hover:bg-gray-700 hover:outline hover:outline-1 hover:outline-slate-50'><a href='/Contact' className='text-indigo-400 hover:text-indigo-600 no-underline'>Contact Us</a></li>
+            <li><a href="/" className="py-2 px-1 block rounded hover:bg-gray-900 hover:outline hover:outline-1 hover:outline-slate-50 text-indigo-400 no-underline">Home</a></li>
+
+            <li><a href="#about" className="py-2 px-1 block rounded hover:bg-gray-900 hover:outline hover:outline-1 hover:outline-slate-50 text-indigo-400 no-underline">About Us</a></li>
+
+            <li><a href="#service" className="py-2 px-1 block rounded hover:bg-gray-900 hover:outline hover:outline-1 hover:outline-slate-50 text-indigo-400 no-underline">Service's</a></li>
+
+            <li><a href="#contact" className="py-2 px-1 block rounded hover:bg-gray-900 hover:outline hover:outline-1 hover:outline-slate-50 text-indigo-400 no-underline">Contact Us</a></li>
+
+            <li><a href="#news" className="py-2 px-1 block rounded hover:bg-gray-900 hover:outline hover:outline-1 hover:outline-slate-50 text-indigo-400 no-underline">News</a></li>
+            <div className='flex space-x-4'>
+              <button className="bg-indigo-500 px-4 py-2 rounded hover:bg-indigo-600">
+                <a href='/login' className='text-gray-200 no-underline'>Login</a>
+              </button>
+              <button className="bg-indigo-500 px-4 py-2 rounded hover:bg-indigo-600">
+                <a href='/signup' className='text-gray-200 no-underline'>Signup</a>
+              </button>
+            </div>
           </ul>
         </div>
       )}
