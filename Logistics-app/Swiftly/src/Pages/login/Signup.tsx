@@ -27,17 +27,17 @@ export const Signup = () => {
   };
 
   return (
-    <div className='flex justify-center items-center min-h-screen bg-slate-300 p-4'>
-      <h1 className='absolute top-4 text-center text-xl sm:text-2xl mb-6 font-bold'>Welcome, SignUp For |Swiftly</h1>
+    <div className='flex justify-center items-center min-h-screen bg-gray-900 p-4'>
+      <h1 className='absolute top-4 text-center text-xl sm:text-2xl mb-6 font-bold dark:text-slate-100'>Welcome, SignUp For |Swiftly</h1>
       <form 
-        className='shadow-lg w-full sm:w-3/4 md:w-2/4 lg:w-1/4 h-auto bg-gray-300 p-4 rounded-md backdrop-blur-sm'
+        className='shadow-lg w-full sm:w-3/4 md:w-2/4 lg:w-1/4 h-auto bg-gray-800 p-4 rounded-md backdrop-blur-sm'
         onSubmit={(e) => {
           e.preventDefault();
           validatePasswords();
         }}
       >
         <div className="mb-3">
-          <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
+          <label htmlFor="email" className="block text-gray-700 dark:text-slate-100 font-medium mb-2">
             <FontAwesomeIcon icon={faUser} className="mr-2" />
             Name
           </label>
@@ -45,12 +45,12 @@ export const Signup = () => {
             required
             type="text"
             id="name"
-            className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 bg-gray-200"
             placeholder="Enter your Name"
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
+          <label htmlFor="email" className="block text-gray-700 dark:text-slate-100 font-medium mb-2">
             <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
             Email
           </label>
@@ -58,12 +58,12 @@ export const Signup = () => {
             required
             type="email"
             id="email"
-            className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 bg-gray-200"
             placeholder="Enter your email"
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="password" className="block text-gray-700 font-medium mb-2">
+          <label htmlFor="password" className="block text-gray-700 dark:text-slate-100 font-medium mb-2">
             <FontAwesomeIcon icon={faKey} className="mr-2" />
             Password
           </label>
@@ -72,13 +72,13 @@ export const Signup = () => {
             onChange={handlePasswordChange}
             type="password"
             id="password"
-            className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 bg-gray-200"
             placeholder="Enter your password"
             autoComplete='new-password'
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="Confirmassword" className="block text-gray-700 font-medium mb-2">
+          <label htmlFor="Confirmassword" className="block text-gray-700 dark:text-slate-100 font-medium mb-2">
             <FontAwesomeIcon icon={faLock} className="mr-2" />
             Confirm Password
           </label>
@@ -87,7 +87,7 @@ export const Signup = () => {
             onChange={handleConfirmPasswordChange}
             type="password"
             id="ConfimPassword"
-            className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 bg-gray-200"
             placeholder="Enter your password"
             autoComplete='new-password'
           />
@@ -95,7 +95,7 @@ export const Signup = () => {
         {error && <p style={{ color: 'red' }}>{error}</p>}
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-300 mb-2"
+          className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-300 mb-6"
         >
           SignUp
         </button>
@@ -107,7 +107,7 @@ export const Signup = () => {
           Login with Google
         </button>
         <div className="text-center">
-          <p>Already have an account? <a href="/login" className="text-blue-500 hover:underline">Login</a> here!</p>
+          <p className='dark:text-slate-100'>Already have an account? <a href="/login" className="text-blue-500 hover:underline">Login</a> here!</p>
         </div>
       </form>
     </div>
